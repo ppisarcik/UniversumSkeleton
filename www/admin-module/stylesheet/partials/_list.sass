@@ -1,0 +1,214 @@
+h1.list
+  font-size: 18px
+  margin-top: 30px
+
+.btn-new
+  text-align: center
+  border: 1px solid $border
+  padding: 10px 20px
+  background-color: #FAFBFE
+  margin-bottom: 20px
+  font-size: 14px
+
+tbody td
+  overflow: hidden !important
+  -ms-text-overflow: ellipsis !important
+  text-overflow: ellipsis !important
+  white-space: nowrap!important
+  max-width: 700px
+
+@media(max-width: 1540px)
+  tbody td
+    max-width: 500px
+
+@media(max-width: 1300px)
+  tbody td
+    max-width: 400px
+
+@media(max-width: 1200px)
+  tbody td
+    max-width: 200px
+
+@media(max-width: 990px)
+  .col-content
+    display: none
+
+  .col-email
+    display: none
+
+@media(max-width: 440px)
+  .col-last_name
+    display: none
+
+  .col-action a
+    font-size: 16px !important
+    margin: 0 5px !important
+
+@media(max-width: 1050px)
+  .col-first_name
+    display: none
+
+.datagrid .row-grid-bottom .col-pagination
+  width: 100%
+
+@media(max-width: 768px)
+  .col-created_at
+    display: none
+
+.col-title
+  max-width: 150px
+  overflow: hidden
+  -ms-text-overflow: ellipsis
+  text-overflow: ellipsis
+  white-space: nowrap
+
+.col-action
+  border-right: 1px solid $border !important
+
+.table-striped tbody tr:nth-of-type(odd)
+  background-color: $bg
+
+.table-hover tbody tr:hover
+  background-color: $hover
+
+.datagrid input,
+.datagrid select
+  border-radius: 0
+
+.datagrid
+  padding: 0
+
+  form
+    -webkit-box-shadow: none
+    -moz-box-shadow: none
+    box-shadow: none
+    padding: 0
+    margin: 40px 0
+
+  th
+    border: 0
+
+  thead tr:nth-child(2) th a
+    color: $scolor !important
+
+  tbody td
+    border: 0
+
+.col-action a
+  font-size: 22px
+  vertical-align: inherit
+  text-align: center
+  margin: 0 10px
+  padding: 0
+  color: #a2b5df
+  transition: all 0.5s ease
+
+  &:hover
+    color: $tcolor
+
+tr.row-group-actions
+
+  input[type="submit"]
+    padding: 9px 20px
+    width: 150px
+    margin: 0
+    float: none
+    background: none
+    border: 1px solid $pcolor
+    color: $pcolor
+    border-radius: 0
+
+    &:hover
+      background-color: $pcolor
+      color: white
+
+  th
+    display: table-cell
+
+.datagrid .row-grid-bottom,
+.datagrid table thead tr.row-group-actions th
+  background-color: $head
+
+.datagrid .row-grid-bottom
+  border: 1px solid $border
+
+.datagrid table th.col-checkbox
+  background: white
+
+.col-pagination
+  font-size: 14px
+
+  .btn-group-sm>.btn, .btn-sm
+    padding: 12px 18px
+
+  > div > a
+    font-size: 16px
+
+    &:hover:not(.active)
+      border: 1px dashed $pcolor
+
+  a.active
+    background: none !important
+    border-radius: 0
+    border-color: $pcolor
+    font-weight: 600
+
+  a
+    color: $pcolor !important
+
+.happy-checkbox.primary svg
+  background-color: $tcolor
+  width: 14px
+  height: 14px
+  border-radius: 0
+
+.happy-checkbox.gray-border
+  border-color: $pcolor
+  border-radius: 0
+
+.happy-checkbox
+  border-width: 1px
+  border-radius: 0
+  width: 13px
+  height: 13px
+
+td.col-username
+  font-weight: 600
+
+tbody td.col-status
+  overflow: visible!important
+
+.col-status .dropdown-menu li
+  padding: 7px
+
+// tree view
+
+.datagrid .datagrid-tree .datagrid-tree-item .datagrid-tree-item-content .datagrid-tree-item-left>.chevron:hover
+  -webkit-box-shadow: 0 0 5px 0 rgba(22, 34, 106, 0.3)
+  -moz-box-shadow: 0 0 5px 0 rgba(22, 34, 106, 0.3)
+  box-shadow: 0 0 5px 0 rgba(22, 34, 106, 0.3)
+
+.toggle-rotate
+  -webkit-box-shadow: 0 0 5px 0 rgba(22, 34, 106, 0.3)
+  -moz-box-shadow: 0 0 5px 0 rgba(22, 34, 106, 0.3)
+  box-shadow: 0 0 5px 0 rgba(22, 34, 106, 0.3)
+
+table tr:hover td.col-action a
+  opacity: 1
+
+.datagrid .btn,
+.col-action a
+  transition: all 0s ease 0s
+
+.table-striped tbody tr:nth-of-type(odd)
+  background-color: white
+
+  &:hover
+    background-color: #f4f5fb
+
+table td
+  font-size: 14px
+
+td.col-action a
+  font-size: 20px
+  opacity: 0

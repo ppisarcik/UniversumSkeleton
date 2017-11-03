@@ -1,0 +1,32 @@
+
+{*
+* Pole kontakt $contacts
+* tu mas priklad ked chces napriklad email - $contacts['email']
+*}
+<section class="stores lazyload" id="stores">
+    <h2>Naše kamenné predajne</h2>
+    <div class="container">
+        <div class="row">
+            {foreach $contactTree as $item}
+                <div class="col-sm-10 col-sm-offset-2 col-lg-5 col-lg-offset-1">
+                    <div class="media media-stores">
+                        <div class="media-left">
+                            <div class="media-object-stores">
+                                <a href="#">
+                                    <img src="{$path}{$item['image']}" alt="predajne">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">{$item["value"]}</h4>
+                            {foreach $item['children'] as $value}
+                                <p class="media-paragraph">{$value["value"]}</p>
+                            {/foreach}
+                            <a href="https://www.google.sk/maps/place/Partiz%C3%A1nska+1250%2F6,+085+01+Bardejov/@49.2923422,21.265095,16z/data=!4m5!3m4!1s0x473e80d94bdd0d8f:0x978ed4ff6cb8a927!8m2!3d49.2924196!4d21.2690817?hl=sk" target="_blank" class="media-a">Zobraziť na mape<i class="glyphicon glyphicon-menu-right remove"></i></a>
+                        </div>
+                    </div>
+                </div>
+            {/foreach}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,68 @@
+{*
+* Pole kontakt $contacts
+* tu mas priklad ked chces napriklad email - $contacts['email']
+*}
+
+<footer>
+    <div id='mapkit-2280'></div>
+    <div class="container footer lazyload">
+        <div class="row footermargin">
+            <div class="col-sm-5 footer-logo-area text-center">
+                <img src="{$basePath}/imgs/logofooter.png" alt="">
+                <p>
+                    <a href="tel:+421907215523">{$contacts['tel1']}</a> <br> <a href="mailto:chcem@podlahyadvere.sk ">{$contacts['email']}</a> <br>
+                </p>
+            </div>
+
+
+            {foreach $mainCategories as $mainCategory}
+            <div class="col-xs-4 col-sm-2 footer-margin text-center-special">
+                <h6 data-toggle="collapse" href="#footerCollapse" aria-expanded="false" aria-controls="collapseExample">{$mainCategory['title']|FirstUpper}</h6>
+                <div class="collapse" id="footerCollapse">
+                    {control articleList, category_id => $mainCategory['id'], template => 'footer-articles', sort => 'id DESC', slug => $mainCategory['slug']}
+                    {foreach $mainCategory['children'] as $item}
+                    <p class="footerlink">
+                        <a href="{plink Category:show $item['slug']}">{$item['title']}</a> <br>
+                       {* <a href="#">Vstupné </a> <br>
+                        <a href="#">Technické </a> <br>
+                        <a href="#">Príslušenstvo</a> <br>*}
+                    </p>
+                    {/foreach}
+                </div>
+            </div>
+            {/foreach}
+           {* <div class="col-xs-4 col-sm-2 footer-margin text-center-special">
+                <h6 data-toggle="collapse" href="#footerCollapse2" aria-expanded="false" aria-controls="collapseExample">Podlahy</h6>
+                <div class="collapse" id="footerCollapse2">
+                    <p class="footerlink">
+                        <a href="#">Laminatové</a> <br>
+                        <a href="#">Drevené</a> <br>
+                        <a href="#">Vinylové</a> <br>
+                        <a href="#">PVC</a> <br>
+                    </p>
+                </div>
+            </div>*}
+            <div class="col-xs-4 col-sm-3 footer-margin text-center-special">
+                <h6 data-toggle="collapse" href="#footerCollapse3" aria-expanded="false" aria-controls="collapseExample">Showroom</h6>
+                <div class="collapse" id="footerCollapse3">
+                    <p class="footerlink">{$contacts['predajna2']}<br>{$contacts['adresa1']}<br>{$contacts['mesto']}<br>
+                        <a href="https://goo.gl/maps/1rsMrxA9Mu22" class="googlemaplink" target="_blank">Zobraziť na Mape</a> <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="specialContainer">
+        <div class="container copyright-area">
+            <div class="row">
+                <div class="col-sm-6 col-md-7">
+                    © 2017 Podlahyadvere.sk
+                </div>
+                <div class="col-sm-6 col-md-5">
+                    Dizajn a programovanie – <a href="http://wame.sk/" target="_blank">WAME<img src="{$basePath}/imgs/footer-logo-wame.png" alt="wame.png" class="footer-logo-wame"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

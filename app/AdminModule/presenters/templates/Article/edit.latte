@@ -1,0 +1,15 @@
+{block title}
+    {if $article}
+        {$article->title}
+    {else}
+      Edit
+    {/if}
+{/block}
+
+{block content}
+{if $article}
+    {control articleForm}
+    {control imageUpload}
+{else}
+    {control articleForm}
+{/if}

@@ -1,0 +1,491 @@
+html, body
+  font-size: 17px
+  color: black
+  width: 100%
+  height: 100%
+  -webkit-font-smoothing: subpixel-antialiased!important
+
+.navbar
+  background: rgba(255, 255, 255, 0.9)
+  z-index: 300
+
+.navbar-fixed-top
+  min-height: 80px
+
+.navbar a
+  font-family: $pfont
+  font-size: 17px
+  color: $scolor !important
+
+.navbar a:hover,
+.navbar a:active,
+.navbar a:focus
+  color: $pcolor !important
+  text-decoration: none
+
+.navbar-shadow
+  box-shadow: 0px -10px 25px 1px #000000
+
+.navbar-toggle,
+.navbar-toggle:active,
+.navbar-toggle:hover,
+.navbar-toggle:focus,
+  top: 14px
+  border: none
+  background-color: rgba(255, 255, 255, 0.0) !important
+
+.navbar-brand
+  padding-top: 40px
+  padding-bottom: 40px
+
+.navbar-brand p
+  float: right
+
+.navbar-brand img
+  float: left
+  margin: -15px 10px 0px -10px
+
+.dropdown-large
+  position: static !important
+
+.dropdown-menu-large
+  padding-top: 10px
+  margin-bottom: 10px
+
+.dropdown
+  font-family: $pfont
+
+.navbar-nav > li > a
+  padding-top: 0px
+  padding-bottom: 0px
+  line-height: 100px
+
+.dropdown-menu-large
+  border: none
+  border-top: 1px solid #e7e7e7
+  width: 100%
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover
+  box-shadow: 0px 0px 40px -10px black
+  background-color: white
+
+.navbar-default .navbar-nav>.open>a::before
+  content: ''
+  display: inline-block
+  background: white
+  color: white
+  width: 100%
+  position: absolute
+  overflow: visible
+  height: 1px
+  bottom: -1px
+  right: 0
+  z-index: 100000
+  opacity: 1
+
+.dropdown-menu-large > li > ul > li
+  list-style: none
+
+.dropdown-menu-large > li > ul > li > a
+  display: block
+  padding: 3px 20px
+  clear: both
+  font-weight: 300
+  line-height: 1.428571429
+  color: $scolor
+  white-space: normal
+
+.dropdown-menu
+  -webkit-box-shadow: 0 8px 14px -3px rgba(0,0,0,.175)
+  box-shadow: 0 8px 14px -3px rgba(0,0,0,.175)
+
+.navbar ul li:hover
+  color: $pcolor
+
+.dropdown-menu-large > li ul > li > a:hover,
+.dropdown-menu-large > li ul > li > a:focus
+  text-decoration: none
+  color: $pcolor !important
+
+.dropdown-menu-large .disabled > a,
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus
+  color: #999999
+
+
+.dropdown-menu-large .disabled > a:hover,
+.dropdown-menu-large .disabled > a:focus
+  text-decoration: none
+  background-color: transparent
+  background-image: none
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false)
+  cursor: not-allowed
+
+.dropdown-menu-large .dropdown-header
+  color: $scolor
+  font-size: 18px
+
+.dropdown-header
+  font-weight: 600
+
+.dropdown-menu li ul li:not(.different)
+  padding-left: 5px
+
+.decoration
+  color: $pcolor
+
+.navbar-collapse
+  border: none
+
+.navbar-default .navbar-toggle .icon-bar
+  background-color: $pcolor
+
+.navbar-header span:first-child
+  position: relative
+  float: left
+  top: -1px
+  font-family: $pfont
+  color: $scolor
+  left: -60px
+  font-weight: 600
+
+.navbar-brand
+  padding-right: 0px
+  margin-right: -25px
+
+button.navbar-toggle
+  margin-right: -10px
+
+.dropdown-menu .dropdown-menu-large .row
+  padding-bottom: 0px !important
+
+a.navbar-cta-container
+  height: 101px
+  width: 285px
+  background: url(../imgs/nav-cta.png)
+  background-position: center
+  background-size: 100%
+  text-align: center
+  color: white !important
+  transition: .5s
+
+.navbar a.navbar-cta-container:hover,
+.navbar a.navbar-cta-container:active,
+.navbar a.navbar-cta-container:focus
+  color: white !important
+  background-size: 110%
+
+a.navbar-cta-container span
+  color: white
+  opacity: 0.5
+
+.navbar-cta
+  position: absolute !important
+  right: 0
+
+//animater underline
+
+.animated-underline
+  position: relative
+  color: $scolor
+  text-decoration: none
+  font-size: 24px
+
+.animated-underline:before
+  content: ""
+  position: absolute
+  width: 100%
+  height: 2px
+  bottom: 0
+  left: 0
+  bottom: -3px
+  background-color: $scolor
+  visibility: hidden
+  -webkit-transform: scaleX(0)
+  transform: scaleX(0)
+  -webkit-transition: all 0.3s ease-in-out 0s
+  transition: all 0.3s ease-in-out 0s
+
+.animated-underline:hover:before
+  visibility: visible
+  -webkit-transform: scaleX(1)
+  transform: scaleX(1)
+
+  //modal
+
+.form-error
+  font-family: $pfont
+
+.modal .navbar-brand
+  position: absolute
+  left: 15%
+  font-family: $pfont
+  z-index: 300000
+
+.modal .navbar-brand p
+  text-decoration: none
+  color: $scolor
+  font-size: 24px
+
+.modal .navbar-brand p:hover
+  color: $pcolor
+
+.modal-header a
+  display: inline-block
+
+.modal-header h4
+  font-size: 42px
+  font-weight: 300
+  margin-bottom: 10px
+
+.modal-header
+  padding-top: 100px
+  padding-bottom: 25px
+  padding-left: 0px
+
+.form-margin
+  margin: 10px 0px
+
+textarea
+  margin-bottom: 30px
+  border: none
+  border-bottom: 2px solid #b0bec5
+  outline: none
+  font-family: $pfont
+
+::-webkit-input-placeholder
+  color: #667083
+
+.help-block, .form-error
+  padding-left: 15px !important
+
+.form-input
+  width: 100%
+
+input[type=text], textarea
+  -webkit-transition: all 0.50s ease-in-out
+  -moz-transition: all 0.50s ease-in-out
+  -ms-transition: all 0.50s ease-in-out
+  -o-transition: all 0.50s ease-in-out
+
+input[type=text]:focus, textarea:focus
+  border-bottom: 2px solid $pcolor
+
+.modal-header a.button
+  margin-right: 10px
+
+.modal-header, .modal-body, .modal-footer
+  margin-left: 100px
+  padding-left: 0px
+  padding-right: 0px
+
+.modal-footer
+  text-align: center
+  padding-top: 50px
+  margin-bottom: 50px
+
+.modal-content
+  padding-right: 300px
+
+.modal-footer a
+  position: static
+
+.modal-body h4
+  font-weight: 400
+  margin: 15px 0px 30px 0px
+
+.modal-header .button,
+.modal-header .button:hover,
+.modal-header .button:focus,
+.modal-header .button:active,
+  width: 97%
+
+.input-area
+  display: inline-block
+  float: right
+  margin-top: 6px
+
+.btn-top-margin
+  margin-top: 25px
+  margin-bottom: 30px
+
+.modal-header .col-sm-6
+  padding: 0
+
+.modal-fullscreen
+  background: transparent
+  padding: 0px !important
+
+.modal-fullscreen .modal-content
+  background: white
+  border: 0
+  -webkit-box-shadow: none
+  box-shadow: none
+  min-height: 100%
+
+.modal-backdrop.modal-backdrop-fullscreen
+  background: url(../imgs/cta-bg-img.jpg)
+
+.modal-backdrop.modal-backdrop-fullscreen.in
+  opacity: 1
+  filter: alpha(opacity=1)
+
+.selectpicker, .selectpicker:focus
+  outline: none
+  border-radius: 35px
+  padding: 10px 13% 10px 15px
+  background-color: white
+
+select
+  webkit-appearance: none
+  -moz-appearance: none
+  text-indent: 1px
+  text-overflow: ''
+  color: #667083
+  font-family: $pfont
+
+input
+  font-family: $pfont
+  border: none
+  border-bottom: 2px #b0bec5 solid
+  padding-bottom: 5px
+
+label
+  margin-left: -20px
+  color: #667083
+  font-family: $pfont
+
+input:focus
+  outline: none
+
+input[type="text"]::-webkit-input-placeholder
+  color: #667083
+
+.modal-body form
+  float: right
+  margin-top: 10px
+
+.modal-body a
+  color: inherit
+  border-radius: 25px
+  padding: 10px 15px
+  text-align: center
+  border: 1px #b0bec5 solid
+  font-family: $pfont
+  font-size: 14px
+  font-weight: 600
+  text-decoration: none
+  margin-top: 10px
+
+.modal-body input
+
+.modal-body .glyphicon
+  margin-left: 5px !important
+
+.modal-body a:hover
+  color: $pcolor
+
+.modal-footer .priceofferbtn
+  background-color: $pcolor
+  color: white
+  position: static !important
+
+.modal-header .button
+  text-decoration: none
+  color: inherit
+
+.modal-body .doors
+  border-bottom: 1px solid #e5e5e5
+  margin-bottom: 30px
+
+.modal-body .floors
+  border-bottom: 1px solid #e5e5e5
+
+.modal-footer
+  border-top: none
+
+.modal-header .button
+  border-color: $pcolor
+
+.selected-choice, .selected-choice-2
+  border-color: #b0bec5 !important
+
+/* .modal-fullscreen
+
+.modal-fullscreen .modal-dialog
+  margin: 0
+  margin-right: auto
+  margin-left: auto
+  width: 100%
+  margin-right: 0px
+  padding: 0px
+  height: 100%
+
+
+// Sub catergory
+
+section.sec-navbar .navbar-nav>li>a
+  line-height: 80px
+
+section.sec-navbar .navbar-nav>li:last-of-type
+  margin-left: -3px
+
+section.sec-navbar .nav > li > a:focus, section.sec-navbar .nav > li > a:hover
+  background-color: #f3f5f6
+
+section.sec-navbar .navbar-collapse
+  padding-right: 0px
+
+section.sec-navbar .navbar-nav>li:hover,
+section.sec-navbar .navbar-nav>li:focus,
+section.sec-navbar .navbar-nav>li:active
+  color: $pcolor
+
+section.sec-navbar .navbar
+  background-color: #f3f5f6
+  border: none
+  color: $tcolor
+
+section.sec-navbar i
+  margin-left: -10px
+  margin-right: 10px
+
+section.sec-navbar .lSSlideOuter
+  width: 70%
+  float: right
+
+section.sec-navbar .navbar-right
+  float: none !important
+
+section.sec-navbar .navbar-left
+  display: inline-block
+
+section.sec-navbar .navbar-nav, section.sec-navbar .navbar-left li a, section.sec-navbar .navbar-right li a
+  margin-top: 0
+  margin-bottom: 0
+  padding-bottom: 0
+  padding-top: 0
+
+section.sec-navbar nav
+  z-index: 1
+
+.dropdown-menu-large li.col-sm-3 a
+  display: block
+  padding: 3px 0px
+  clear: both
+  font-weight: 300
+  line-height: 1.428571429
+  color: #2c333f
+
+.dropdown-header a
+  font-weight: 600 !important
+
+.dropdown-menu
+  padding-bottom: 10px
+
+// edit
+.edit
+  margin: 200px
+  z-index: 30000

@@ -1,0 +1,12 @@
+{block content}
+<h1>History</h1>
+<a href="{plink Order:default}">Back</a>
+{if $orders}
+        {foreach $orders as $order}
+            <div>
+                Name: <strong>{$order->name}</strong> Email: {$order->email} Phone: {$order->phone} Message: {$order->message}
+            </div>
+        {/foreach}
+{else}
+    <h1>You dont have any orders yet</h1>
+{/if}

@@ -1,0 +1,27 @@
+parameters:
+
+
+database:
+    dsn: 'mysql:host=127.0.0.1;dbname=podlahyadvere_test'
+    user: root
+    password:
+    options:
+        lazy: yes
+
+security:
+
+application:
+    debugger: true # panel do Laděnky
+    catchExceptions: false
+
+tracy:
+    bar:
+        - Nextras\MailPanel\MailPanel(%tempDir%/mail-panel-latte)
+services:
+    nette.mailer:
+        class: Nette\Mail\IMailer
+        factory: Nextras\MailPanel\FileMailer(%tempDir%/mail-panel-mails)
+
+    Generator: App\Utils\GenerateString
+
+

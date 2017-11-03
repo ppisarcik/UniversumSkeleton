@@ -1,0 +1,152 @@
+#wrapper
+  padding-left: 0
+  -webkit-transition: all 0.5s ease
+  -moz-transition: all 0.5s ease
+  -o-transition: all 0.5s ease
+  transition: all 0.5s ease
+
+#wrapper.toggled
+  padding-left: 250px
+
+#sidebar-wrapper
+  overflow: hidden
+  z-index: 1000
+  position: fixed
+  left: 250px
+  width: 0
+  height: 100%
+  margin-left: -250px
+  background: white
+  border-right: 1px solid $border
+  transition: width 0.4s ease
+
+#wrapper.toggled #sidebar-wrapper
+  width: 250px
+
+#page-content-wrapper
+  width: 100%
+  position: absolute
+  padding: 20px 50px 50px 50px
+
+#wrapper.toggled #page-content-wrapper
+  position: absolute
+  margin-right: -250px
+
+.sidebar-nav
+  position: absolute
+  top: 0
+  width: 250px
+  margin: 0
+  padding: 0
+  list-style: none
+
+.sidebar-nav li
+  line-height: 50px
+
+.sidebar-nav li:not(.sidebar-brand) a
+  display: block
+  text-decoration: none
+  color: $pcolor
+  transition: all 0.2s ease-in-out
+  font-size: 14px
+
+.sidebar-nav li:not(.sidebar-brand) a:hover
+  text-decoration: none
+  color: $pcolor
+  background: #f5f6fb
+
+.sidebar-nav li a:hover > .fa
+  color: #0c6bd8
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus
+  text-decoration: none
+
+li.label
+  color: $tcolor
+  font-family: $pfont
+  font-size: 14px
+  margin-top: 15px
+  text-indent: 20px
+
+  img
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    right: 0
+    object-fit: cover
+
+.sidebar-nav .fa
+  margin-right: 20px
+  margin-left: 50px
+  color: $tcolor
+  font-size: 18px
+  position: relative
+  top: 2px
+  transition: all 0.2s ease-in-out
+
+.sidebar-nav li:not(.sidebar-brand) a
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+.logout-sidebar
+  display: none
+
+.toggled-special
+  overflow-y: hidden
+
+.sidebar-brand
+  padding: 8px 20px
+
+  a
+    display: inline-block
+    color: $pcolor
+
+    &:hover
+      text-decoration: none
+
+  h3
+    font-size: 15px
+    display: inline-block
+    margin: 0
+    overflow: hidden
+    max-width: 135px
+    text-overflow: ellipsis
+    white-space: nowrap
+    vertical-align: middle
+
+  .user-img-container
+    height: 40px
+    width: 40px
+    display: inline-block
+    -webkit-border-radius: 100%
+    -moz-border-radius: 100%
+    border-radius: 100%
+    overflow: hidden
+    vertical-align: middle
+    margin-right: 5px
+
+    img
+      height: 100%
+      width: 100%
+      object-fit: cover
+      vertical-align: baseline
+
+  .dropdown
+    display: inline-block
+    float: right
+
+    .dropdown-item
+      padding: 0 1rem
+      font-weight: 500
+
+    button
+      cursor: pointer
+
+      &::after
+        margin-left: 0
+
+    .btn-secondary
+      border: none

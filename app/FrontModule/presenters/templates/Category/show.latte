@@ -1,0 +1,22 @@
+{block content}
+
+{control slider, 'slug' => $slug, 'template' => 'MainSlider', id => $id, path => 'categories'}
+
+  <section class="sec-navbar">
+
+          <nav class="navbar">
+              <div class="container">
+                  {control categoryList 'id' => $id, 'template' => 'SubMenu' ,'sort' => 'id DESC'}
+                  {control articleList, category_id => $id, 'template' => 'SubMenu' ,'sort' => 'id DESC'}
+                      <ul class="nav navbar-nav navbar-left">
+                          <li><a href="/"><i class="glyphicon glyphicon-chevron-left"></i>Spať</a></li>
+                      </ul>
+              </div>
+          </nav>
+
+  </section>
+
+  {control categoryList, id => $id, template => 'default' , slug => $slug}
+  {control articleList, category_id => $id, template => 'default'}
+  {control categoryList, template => 'producers'}
+

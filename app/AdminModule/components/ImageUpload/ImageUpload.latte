@@ -1,0 +1,42 @@
+<form n:name=imageForm class="container">
+  <div class="row">
+    <div class="offset-sm-3 col-sm-6 offset-md-0 col-md-12 offset-lg-3 col-lg-6">
+      <input type="file" n:name=image n:class="$presenter->isLinkCurrent('Contact:*') ? contactUpload : imageUpload">
+        {foreach $form[imageList]->items as $key => $label}
+        {var $src = $label->getChildren()[0]->getAttribute('src')}
+        {var $imageEdit = $label->getChildren()[1]->getAttribute('href')}
+        {var $imageName = $label->getChildren()[0]->getAttribute('data-image')[$key]['image_name']}
+        {var $imageSize = $label->getChildren()[0]->getAttribute('data-image')[$key]['image_size']}
+        <li class="formImage fileuploader-item file-type-image file-ext-png upload-successful">
+          <div class="columns">
+            <div class="column-thumbnail">
+              <div class="fileuploader-item-image">
+                <img src="{$src}" height="36" width="36">
+              </div>
+            </div>
+          </div>
+          <div class="column-title">
+          <div title="{$imageName}">{$imageName}</div>
+            <span>{$imageSize|bytes}</span>
+          </div>
+          <div class="column-actions">
+            <div>
+              <label n:name=radio:$key class="fileuploader-action main-image" title="Set as main image">
+                  <input n:name=radio:$key>
+                  <i class="fa fa-star-o" aria-hidden="true"></i>
+              </label>
+            </div>
+            <div>
+              <a href="{$imageEdit}" class="fileuploader-action ajax" title="Edit image" data-toggle="modal" data-target="#editModal" data-heading="Edit image"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            </div>
+            <span>
+              <label n:name=imageList:$key class="fileuploader-action remove fileuploader-action-remove" title="Remove image"><input n:name=imageList:$key><i></i></label>
+            </span>
+          </div>
+        </li>
+        {/foreach}
+      <input type="submit" n:name=send>
+    </div>
+  </div>
+</form>
+{*{control imageForm}*}

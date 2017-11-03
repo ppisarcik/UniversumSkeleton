@@ -1,0 +1,30 @@
+{foreach $articles as $article}
+    {*{if $images}
+    {var $image = $images[$article['id']]->image}
+    {else}
+    {var $image = null}
+    {/if}*}
+  <div class="col-sm-8 col-md-6 xs-button-center">
+      <a class="button main-button anchor" href="{plink Category:show $slug}#{$article->title|webalize}">
+          <div class="button-image-container">
+              {control articleList template => 'sub/images', image_id => $article->image_id}
+              {*{if $image == null}
+                  <img src="/imgs/buttons/sample.jpg" alt="first" class="button-image">
+
+              {else}
+                  <img src="{$path}{$image->name}" alt="{$image->alt}" class="button-image">
+              {/if}*}
+          </div>{$article->title}
+      </a>
+  </div>
+{/foreach}
+{*
+
+<div class="col-sm-8 col-md-6 xs-button-center">
+  {if $hasNodes}
+      <a class="button main-button button-no-image arrow-btn-animation" href="{plink Category:show $slug}">Zobraziť všetky</a>
+  {else}
+      <a class="button main-button button-no-image arrow-btn-animation" href="#" data-target="#modal-fullscreen" data-toggle="modal">Mám záujem</a>
+  {/if}
+</div>
+*}

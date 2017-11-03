@@ -1,0 +1,13 @@
+<section class="gallery">
+	<div class="container">
+		<h4 class="text-center">Galeria</h4>
+		<hr>
+		<div class="lightbox-gallery">
+            {foreach $images as $image}
+                <div>
+                    <img src="{$path}{$image->name}" alt="{$image->alt}">
+                </div>
+            {/foreach}
+		</div>
+	</div>
+</section>

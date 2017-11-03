@@ -1,0 +1,137 @@
+$pcolor: hsl(231, 66%, 25%)
+$scolor: hsl(222, 100%, 52.4%)
+$lightfont: #0c6bd8
+$tcolor: hsl(225, 39%, 49%)
+
+$border: hsl(224, 54%, 91%)
+$hover: hsl(230, 43%, 97%)
+$bg: hsl(225, 67%, 99%)
+
+$pfont: 'Poppins'
+
+body
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100vh
+
+.alert
+  position: absolute
+  width: 100%
+  top: 0
+
+.container
+  padding-bottom: 30px
+
+form
+  background-color: white
+  -webkit-box-shadow: 0 0 30px 0 rgba(22, 34, 106, 0.3)
+  -moz-box-shadow: 0 0 30px 0 rgba(22, 34, 106, 0.3)
+  box-shadow: 0 0 30px 0 rgba(22, 34, 106, 0.3)
+  text-align: center
+  font-family: $pfont
+  color: $tcolor
+  width: 700px
+  margin: 0 30px
+
+  h1
+    color: $lightfont
+    font-size: 18px
+    margin-top: 30px
+    font-weight: 500
+    margin-bottom: 0
+
+  input[type="submit"]
+    float: right
+    border: none
+    background-color: $scolor
+    border-radius: 2px
+    color: white
+    padding: 10px 0
+    cursor: pointer
+    width: 100%
+    transition: all 0.1s ease-in
+
+    &:hover,
+    &:active,
+    &:focus
+      background-color: $pcolor
+
+  .inputs
+    margin: 20px
+
+    input
+      border-radius: 2px
+      border: 1px solid $border
+      background-color: #f5f6fb
+      display: block
+      padding: 8px
+      width: 100%
+
+    label
+      display: block
+      text-align: left
+      margin-bottom: 0
+      color: $pcolor
+
+      &:last-of-type
+        margin-top: 20px
+
+  .special-padding
+    padding-top: 10px
+
+  .links
+    margin: 0 20px
+
+  p
+    font-size: 13px
+    margin-top: 3px
+    text-align: right
+
+  .remember
+    text-align: left
+
+    label
+      font-size: 13px!important
+      color: $scolor
+
+    .checkbox label:hover .helper
+      color: $scolor
+
+    .checkbox input:checked ~ .helper
+      color: $scolor
+
+    .checkbox .helper::before, .checkbox .helper::after
+      background-color: $scolor
+
+    input
+      vertical-align: middle
+
+    .helper
+      color: $scolor
+
+    .checkbox
+      margin: 0
+      display: inline-block
+
+    .checkbox label
+      padding-left: 25px
+
+  a
+    color: $scolor
+
+  @media (max-width: 768px)
+    input[type="submit"]
+      float: none
+
+    form
+      width: 700px
+
+    .remember
+      text-align: center
+
+    p
+      text-align: center
+
+
+@import "../../plugins/materialForms"

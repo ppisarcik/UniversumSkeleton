@@ -1,0 +1,18 @@
+{foreach $mainCategories as $category}
+    <section class="category">
+        <div class="container">
+            <div class="row">
+                <div n:class="$iterator->even ? col-sm-push-6, $iterator ? col-sm-6, center-special, $iterator->odd ? col-sm-push-1">
+                    <h2 id="{$category->title|webalize}">{$category->title|firstUpper}</h2>
+                    <p class="description">{$category->content|firstUpper}</p>
+                    {control categoryList, id => $category->id, template => 'sub/buttons', slug => $category->slug}
+                    {control articleList, id => 4}
+                </div>
+                    <div n:class="$iterator->even ? col-sm-pull-6, col-md-offset-1, $iterator ? col-sm-5, col-md-4, $iterator->odd ? col-sm-push-1, carousel">
+                    {control slider id => $category->id, template => 'carousel', path => 'categories'}
+                    </div>
+                </div>
+            </div>
+        <hr>
+    </section>
+{/foreach}

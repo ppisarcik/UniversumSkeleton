@@ -1,0 +1,65 @@
+{extends $original_template}
+<tr n:block="pagination">
+    <td colspan="{$control->getColumnsCount()}" n:if="!$control->isTreeView()" class="row-grid-bottom">
+        <div class="col-pagination text-center">
+            {**
+            * Pagination
+            *}
+            {control paginator}
+        </div>
+    </td>
+</tr>
+
+<tr n:block="header-column-row">
+    <th n:snippet="thead-group-action" n:if="$hasGroupActions" n:attr="'rowspan=2' => !empty($filters) && !$control->hasOuterFilterRendering()" class="col-checkbox">
+        <input n:if="$hasGroupActionOnRows" n:class="$control->useHappyComponents() ? 'happy gray-border' , primary" name="{$control->getName()|lower}-toggle-all" type="checkbox" data-check="{$control->getName()}" data-check-all="{$control->getName()}">
+    </th>
+    {foreach $columns as $key => $column}
+    {var $th = $column->getElementForRender('th', $key)}
+    {$th->startTag()|noescape}
+    {var $col_header = 'col-' . $key . '-header'}
+
+    {**
+    * Column header can be defined also with block {col-<key>-header}
+    *}
+    {ifset #$col_header}
+    {include #$col_header, column => $column}
+    {else}
+    {if $column->isSortable()}
+    <a n:class="$column->isSortedBy() ? 'sort' : '', 'ajax'" href="{link sort!, sort => $control->getSortNext($column)}" id="datagrid-sort-{$key}">
+        {include #column-header, column => $column}
+
+        {if $column->isSortedBy()}
+        {if $column->isSortAsc()}
+        <i n:block="icon-sort-up" class="{$icon_prefix}caret-up"></i>
+        {else}
+        <i n:block="icon-sort-down" class="{$icon_prefix}caret-down"></i>
+        {/if}
+        {else}
+        <i n:block="icon-sort" class="{$icon_prefix}sort"></i>
+        {/if}
+    </a>
+    {else}
+    {include #column-header, column => $column}
+    {/if}
+    {/ifset}
+
+    <div class="datagrid-column-header-additions">
+        <div class="btn-group column-settings-menu" n:if="$control->canHideColumns()">
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i n:block="icon-caret-down" class="{$icon_prefix}caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu--grid">
+                <li>
+                    <a n:href="hideColumn!, column => $key" class="ajax">
+                        <i n:block = "icon-eye-slash" class="{$icon_prefix}eye-slash"></i> {='ublaboo_datagrid.hide_column'|translate}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {$th->endTag()|noescape}
+    {/foreach}
+    <th n:if="$actions || $control->isSortable() || $items_detail || $inlineEdit || $inlineAdd" class="col-action text-center">
+        {='ublaboo_datagrid.action'|translate}
+    </th>
+</tr>

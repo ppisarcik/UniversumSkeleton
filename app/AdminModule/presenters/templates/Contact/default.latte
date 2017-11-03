@@ -1,0 +1,17 @@
+{block content}
+<h1 class="list">Contacts</h1>
+<a href="#" data-toggle="modal" data-target="#editModal" class="btn-new">Add new store</a>
+
+{control contactGrid}
+
+<form n:name=modalContactForm class="hidden">
+    <div class="form-group">
+        <div class="col-sm-12">
+            <input n:name=shop />
+            <label for="username" class="control-label">Name</label><i class="bar"></i>
+        </div>
+    </div>
+    <div class="col-sm-12 special-submit">
+        <input type="submit" n:name=submit>
+    </div>
+</form>

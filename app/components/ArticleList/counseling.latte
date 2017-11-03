@@ -1,0 +1,15 @@
+<section class="counseling" id="counseling">
+    <div id="owl-demo" class="owl-carousel owl-theme">
+        {foreach $articles as $article}
+            <figure id="currentImageWithCaption">
+                <a href="{plink Article:show $article->slug}">
+                    <figcaption id="figcaption">
+                        <h4>{$article->title}</h4>
+                        <p class="caption">{$article->content}</p>
+                        <p class="readmore"><a href="{plink Article:show $article->slug}">Citat viac<i class="glyphicon glyphicon-menu-right"></i></p></a>
+                    </figcaption>
+                </a>
+            </figure>
+        {/foreach}
+    </div>
+</section>

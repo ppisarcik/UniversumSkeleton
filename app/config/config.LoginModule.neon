@@ -1,0 +1,8 @@
+services:
+        #Forgot Password Form
+        - App\LoginModule\Components\ForgotPasswordForm\ForgotPasswordControl
+        - App\LoginModule\Components\ForgotPasswordForm\ForgotPasswordControlFactory
+
+        #Reset Password Form
+        - App\LoginModule\Components\ResetPasswordForm\ResetPasswordFormControl
+        - App\LoginModule\Components\ResetPasswordForm\ResetPasswordFormControlFactory

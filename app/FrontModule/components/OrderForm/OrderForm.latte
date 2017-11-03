@@ -1,0 +1,78 @@
+
+<div class="modal modal-fullscreen fade" id="modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <a class="navbar-brand" href="{$basePath}">
+        <img src="{$basePath}/imgs/logo.png" alt="Logo">
+        <p>Podlahyadvere<i class="decoration">.</i>sk</p>
+    </a>
+    <div class="modal-dialog">
+        <div class="modal-content col-sm-7 col-sm-offset-5 col-xs-12">
+            <form n:name=orderForm data-toggle="validator">
+                <div class="modal-header">
+                    <h4 class="modal-title text-center" id="myModalLabel">Nezáväzná cenová ponuka</h4>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
+                                <a class="button main-button selected-choice" id="remove-hidden-floors" href="#"><div class="button-image-container"><img src="{$basePath}/imgs/carousel/floorsdoors/1.jpg" alt="first" class="button-image"></div>Podlahy</a>
+                            </div>
+                            <div class="col-sm-12 col-md-6 col-lg-6 col-xs-12">
+                                <a class="button main-button selected-choice-2" id="remove-hidden-doors" href="#"><div class="button-image-container"><img src="{$basePath}/imgs/carousel/floorsdoors/2.png" alt="first" class="button-image"></div>Dvere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="floors hidden">
+                        <h4>Aké podlahy by ste chceli ?</h4>
+                        <select class="selectpicker minimal" n:name=floorsSelect>
+                        </select>
+                        <div class="input-area">
+                            <input n:name=floorsQuantity type="text" placeholder="Plocha" class="numbers-only two-digits-limit" maxlength="2">
+                            <label>m2</label>
+                        </div>
+                        <div class="text-center btn-top-margin">
+                            <a class="show-doors" href="#">Chcem aj dvere<i class="glyphicon glyphicon-plus-sign"></i></a>
+                        </div>
+                    </div>
+                    <div class="doors hidden">
+                        <h4>Aké dvere by ste chceli ?</h4>
+                        <select class="selectpicker minimal" n:name=doorsSelect>
+                        </select>
+                        <div class="input-area">
+                            <input n:name=doorsQuantity type="text" placeholder="Množstvo" class="numbers-only two-digits-limit" maxlength="2">
+                            <label>ks</label>
+                        </div>
+                        <div class="text-center btn-top-margin">
+                            <a class="show-floors" href="#">Chcem aj podlahy<i class="glyphicon glyphicon-plus-sign"></i></a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 form-margin">
+                            <input n:name=name type="text" class="form-input" placeholder="Meno a priezvisko" type="text" data-validation="length" data-validation-length="min2" data-validation-error-msg="Nezadal si meno">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 col-md-6 form-margin">
+                            <input n:name=email type="text" class="form-input" placeholder="Email" type="text" data-validation="email" data-validation-error-msg="Nezadal si email">
+                        </div>
+                        <div class="col-sm-12 col-md-6 form-margin">
+                            <input n:name=phone type="text" class="form-input" placeholder="Telefónne číslo" type="text" data-validation="length alphanumeric" data-validation-length="min2" data-validation-error-msg="Nezadal si tel. číslo">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 form-margin">
+                            <input n:name=city type="text" class="form-input" placeholder="Mesto" type="text" data-validation="length alphanumeric" data-validation-length="min2" data-validation-error-msg="Nezadal si mesto">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12 form-margin">
+                            <textarea n:name=message class="form-input" rows="3" placeholder="Vaša správa" data-validation="length" data-validation-length="min2" data-validation-error-msg="Nechceš zanechať správu?"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input n:name=send href="#" class="priceofferbtn" type="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

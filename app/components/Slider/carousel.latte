@@ -1,0 +1,13 @@
+{*
+* $images tabulka s obrazkami
+* $path cesta /www/uploads/images/category
+* <img src="{$path}{$image->name}" alt="{$image->alt}"> tu mas priklad
+*}
+
+<ul class="lightSlider cS-hidden">
+{foreach $images as $image}
+  <li>
+    <img src="{$path}{$image->name}" alt="{$image->alt}">
+  </li>
+{/foreach}
+</ul>

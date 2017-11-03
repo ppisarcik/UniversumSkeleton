@@ -1,0 +1,9 @@
+{if $images}
+{foreach $images as $image}
+<a href="#">
+    <img class="media-object media-img-producers" src="{$path}{$image->name}" alt="{$image->alt}">
+</a>
+{/foreach}
+{else}
+    <img class="media-object media-img-producers" src="/imgs/producers/sapeli.png" alt="sapeli">
+{/if}

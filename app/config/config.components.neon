@@ -1,0 +1,25 @@
+services:
+            # Gallery
+            - App\Components\Gallery\GalleryControl
+            - App\Components\Gallery\GalleryControlFactory
+
+            # Slider
+            - App\Components\Slider\SliderControl
+            - App\Components\Slider\SliderControlFactory
+
+            #Image Form
+            - App\AdminModule\Components\ImageForm\ImageFormControl
+            - App\AdminModule\Components\ImageForm\ImageFormControlFactory
+
+            #Categories
+            - App\Components\CategoryList\CategoryListControl
+            - App\Components\CategoryList\CategoryListControlFactory
+
+            #Articles
+            - App\Components\ArticleList\ArticleListControl
+            - App\Components\ArticleList\ArticleListControlFactory
+
+            # Menu
+            - App\Components\Menu\MenuControl
+            - App\Components\Menu\MenuControlFactory
+

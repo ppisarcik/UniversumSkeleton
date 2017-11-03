@@ -1,0 +1,5 @@
+<ul class="nav navbar-nav navbar-right lightSlider">
+  {foreach $mainCategories as $category}
+    <li><a href="#{$category->title|webalize}" class="anchor">{$category->title}</a></li>
+  {/foreach}
+</ul>

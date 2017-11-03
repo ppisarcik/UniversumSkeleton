@@ -1,0 +1,36 @@
+<form n:name=form>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="text-center">Sign in</h1>
+                </div>
+            </div>
+            <div class="row inputs">
+                <div class="col-sm-6">
+                    <label for="username">Username</label>
+                    <input n:name=username placeholder="">
+                </div>
+                <div class="col-sm-6">
+                    <label for="password">Password</label>
+                    <input n:name=password placeholder="">
+                </div>
+            </div>
+            <div class="row links">
+                <div class="col-sm-12 col-md-4 special-padding remember">
+                    <div class="checkbox">
+                        <label>
+                            Remember login<input id="rememberLogin" n:name=remember><i class="helper"></i>
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-5 special-padding">
+                    <a href={plink Sign:ForgotPassword}><p>Forgot <span>password</span>?</p></a>
+                </div>
+                <div class="col-sm-12 col-md-3">
+                    <input n:name=submit>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

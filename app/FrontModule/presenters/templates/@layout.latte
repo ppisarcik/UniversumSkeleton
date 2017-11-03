@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="{$settings['site_description']}">
+    <meta name="keywords" content="{$settings['site_keywords']}">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="universum.ml">
+    <link rel="shortcut icon" href="{$basePath}/imgs/fav.ico">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="{$basePath}/stylesheet/main.css" rel="stylesheet">
+    <title>{ifset title}{include title} | {/ifset}Podlahyavere.sk</title>
+</head>
+
+<body>
+
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+
+	{control menu}
+
+	<!-- Modal Box -->
+    {control orderForm}
+	<!-- Modal Box -->
+
+	{include content}
+	    {if $presenterName == 'Front:Contact'}
+            <div class="white-space-contacts"></div>
+        {/if}
+	<section class="priceoffer lazyload" id="priceoffer">
+        <div class="container ">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h5 class="">Požiadajte si o cenovú ponuku</h5>
+                    <p class="priceofferparagraph">Cez tento formulár si úplne ľahko vyberiete typ sortimentu, služby alebo aj oblasť Vášho záujmu a my sa Vám v krátkom čase ozveme. Prosím, zanechajte nám na seba aktuálny kontakt (e-mail, telefón...), aby sme sa vám mohli čo najskôr
+                        ozvať.
+                        </p><p>
+                </p></div>
+                <div class="col-sm-4 special-center">
+                    <div class="">
+                        <img src="{$basePath}/imgs/cta.png" alt="" class="cta-img">
+                    </div>
+                    <a href="#" data-toggle="modal" data-target="#modal-fullscreen" class="priceofferbtn">Požiadajte o cenovú ponuku<span class="glyphicon glyphicon-menu-right"></span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {if $presenterName == 'Front:Contact'}
+        <section class="question">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <h2>Mate nejake otazky ?</h2>
+                        <p>Zavolajte nám na <a href="tel:{$contacts['tel1']}">{$contacts['tel1']}</a> alebo<br>
+                           napiste na <a href="mailto:{$contacts['email']}">{$contacts['email']}</a>
+                        </p>
+                        <p class="shop">
+                        {$contacts['predajna1']}<span class="decoration"></span>{$contacts['adresa1']}<span class="decoration"></span>{$contacts['mesto']}<span class="decoration"></span>IC<span class="decoration"></span>DIC
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </section>
+    {/if}
+    {control shops}
+	{control menu, template => 'footer'}
+	{block scripts}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRsBVqj35g2gwlGPHX6dAPv7cYytBvcPk&extension=.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="{$basePath}/js/main.js"></script>
+	{/block}
+</body>
+</html>

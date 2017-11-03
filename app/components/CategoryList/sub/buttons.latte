@@ -1,0 +1,29 @@
+
+{if $hasNodes}
+
+    {foreach $subCategories as $subCategory}
+      <div class="col-sm-8 col-md-6 xs-button-center">
+          <a class="button main-button" href="{plink Category:show $slug}#{$subCategory->title|webalize}">
+              <div class="button-image-container">
+                  {control categoryList, template => 'sub/images', image_id => $subCategory->image_id}
+              </div>
+              {$subCategory->title}
+          </a>
+      </div>
+
+
+    {/foreach}
+
+    <div class="col-sm-8 col-md-6 xs-button-center">
+      <a class="button main-button button-no-image arrow-btn-animation" href="{plink Category:show $slug}">Zobraziť všetky</a>
+    </div>
+{elseif $articles}
+    {control articleList, category_id => $id, template => 'sub/buttons', slug => $slug}
+    <div class="col-sm-8 col-md-6 xs-button-center">
+      <a class="button main-button button-no-image arrow-btn-animation" href="{plink Category:show $slug}">Zobraziť všetky</a>
+    </div>
+{else}
+  <div class="col-sm-8 col-md-6 xs-button-center">
+    <a class="button main-button button-no-image arrow-btn-animation" href="#" data-target="#modal-fullscreen" data-toggle="modal">Mám záujem</a>
+  </div>
+{/if}

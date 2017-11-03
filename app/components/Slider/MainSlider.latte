@@ -1,0 +1,11 @@
+<section class="category-cover">
+    <div class="cover-content">
+        <h1 class="category-title">{$category->title|firstUpper}</h1>
+        <p class="lead">{$category->content|firstUpper}</p>
+        {if $mainImage}
+            <img src="{$path}{$mainImage->name}" alt="#" class="banner-bg" ondragstart="return false">
+            {else}
+            <img src="../imgs/doors-cover-img.jpg" alt="#" class="banner-bg" ondragstart="return false">
+        {/if}
+    </div>
+</section>

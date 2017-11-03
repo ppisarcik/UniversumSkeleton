@@ -1,0 +1,43 @@
+
+{*<form n:name=contactForm class="container">*}
+    {*<div class="form-group">*}
+        {*<div class="col-sm-12">*}
+            {*<input type="text" n:name=contact required/>*}
+            {*<label for="contact" class="control-label">Value</label><i class="bar"></i>*}
+        {*</div>*}
+    {*</div>*}
+    {*<hr>*}
+    {*<div class="col-sm-12 special-submit">*}
+        {*<input type="submit" n:name=send>*}
+    {*</div>*}
+{*</form>*}
+
+<form n:name=contactForm class="container">
+    <div class="title text-center">
+        <input n:name="{$contact->name}" class="hidden">
+        <h1 class="list">{$contact->value}</h1>
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+    </div>
+    {snippet contact}
+        {foreach $children as $key => $value}
+            <div class="form-group" data-sort="{$value['sort']}" id="{$value['id']}">
+                <div class="offset-lg-3 col-lg-6 offset-md-0 col-md-12">
+                    {input $value['name']}
+                    <label for="contact" class="control-label">{$value['title']}</label><i class="bar"></i>
+                    <div class="contact-action">
+                        <a href="/admin/contact/?id_deleted={$value['id']}&do=deleteContact" class="ajax remove" title="Remove"><i class="fa fa-times" aria-hidden="true"></i></a>
+                        <a href="#" class="reorder" title="Reorder"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        {/foreach}
+    {/snippet}
+    <div class="offset-lg-3 col-lg-6 offset-md-0 col-md-12">
+        <a href="/admin/contact/element/?parentId={$id}" data-target="#editModal" data-toggle="modal" class="ajax element" title="add">+</a>
+        <input n:name=send>
+    </div>
+</form>
+
+<script>
+
+</script>

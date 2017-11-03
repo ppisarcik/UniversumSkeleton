@@ -1,0 +1,9 @@
+<section class="about-us">
+  <div class="container">
+    <h1 class="category-title text-center">{$articleShow->title|firstUpper}</h1>
+    <hr>
+    {*<h2 id="{$articleShow->title|webalize}">{$articleShow->title|firstUpper}</h2>*}
+    <p class="description">{$articleShow->description|firstUpper}</p>
+     {$articleShow->content|firstUpper|noescape}
+  </div>
+</section>

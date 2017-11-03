@@ -1,0 +1,76 @@
+body
+  overflow-x: hidden
+  font-weight: 500
+  font-family: $pfont
+  color: $pcolor
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+.hidden
+  display: none!important
+
+::-moz-selection
+  color: white
+  background: $pcolor
+
+::selection
+  color: white
+  background: $pcolor
+
+a:hover,
+a:active,
+a:focus
+  color: $scolor
+
+hr
+  margin: 0
+  border: none
+  border-bottom: 1px solid $border
+
+p
+  margin-bottom: 0
+
+.dropdown-toggle
+  border-radius: 0
+  font-family: $pfont
+  font-size: 14px
+  color: $pcolor
+
+.btn-secondary.active,
+.btn-secondary:active,
+.show > .btn-secondary.dropdown-toggle,
+.dropdown-toggle:hover
+  background-color: $hover
+  border-color: $border
+  color: $pcolor
+
+.dropdown-menu
+  right: 0
+  left: auto
+  border-color: #dae1f4
+  padding: 0
+  margin: 0
+  border-radius: 0
+  min-width: initial
+
+  .dropdown-item
+    color: $pcolor
+    margin: 0
+    padding: 10px
+    text-align: center
+    font-family: $pfont
+    font-size: 14px
+
+  .dropdown-item.active,
+  .dropdown-item:active
+    background-color: $hover
+
+  .dropdown-item:hover .fa
+    color: #0c6bd8
+
+  .fa
+    margin: 0 10px
+
+.alert-warning
+  margin: 0
+  border-radius: 0

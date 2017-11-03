@@ -1,0 +1,31 @@
+  <form n:name=articleForm class="container">
+    <h1 class="text-center">Edit article</h1>
+    <div class="form-group">
+      <div class="offset-lg-3 col-lg-6 offset-md-0 col-md-12">
+          <input type="text" n:name=title>
+          <label for="title" class="control-label">Title</label><i class="bar"></i>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="offset-lg-3 col-lg-6 offset-md-0 col-md-12">
+          <input type="text" n:name=slug data-placement="top" data-toggle="tooltip" data-html="true" title="URL address of article - articles/<b>your-custom-url</b>">
+          <label for="title" class="control-label">/URL</label><i class="bar"></i>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="offset-lg-3 col-lg-6 offset-md-0 col-md-12">
+          <textarea class="trumbowyg" type="text" n:name=content style="min-height: 200px"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="offset-lg-3 col-lg-6 offset-md-0 col-md-12 special-margin">
+        <select n:name=categories></select>
+        <label for="parent_id" class="control-label">Categorisation</label><i class="bar"></i>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-sm-3 col-sm-6 offset-md-0 col-md-12 offset-lg-3 col-lg-6">
+        <input type="submit" n:name=send>
+      </div>
+    </div>
+  </form>

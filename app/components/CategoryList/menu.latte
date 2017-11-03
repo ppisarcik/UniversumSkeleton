@@ -1,0 +1,16 @@
+<ul class="dropdown-menu dropdown-menu-large">
+    {if $articles}
+        {control articleList, category_id => 2, template => 'menu'}
+    {else}
+        <div class="container">
+            {foreach $subCategories as $subCategory}
+                <li class="col-sm-3">
+                    <ul>
+                        <li class="dropdown-header">{$subCategory->title}</li>
+                        {control articleList, template => 'menu-doors', category_id => $subCategory->id, slug => $slug}
+                    </ul>
+                </li>
+            {/foreach}
+        </div>
+    {/if}
+</ul>

@@ -1,0 +1,31 @@
+{**
+* $articles - vsetky clanky ktore spadaju pod id kategorie
+* Priklad:
+* {if $articles}
+*   {foreach $articles as $article}
+*       <p>{$article->title}</p>
+*        <div>{$article->content}</div>
+*   {/foreach}
+*{/if}
+*}
+
+
+{foreach $articles as $article}
+<section class="category">
+    <div class="container">
+        <div class="row">
+            <div n:class="$iterator->even ? col-sm-push-6, $iterator ? col-sm-6, center-special, $iterator->odd ? col-sm-push-1">
+                <h2 id="{$article->title|webalize}">{$article->title|firstUpper}</h2>
+                <p class="description">{$article->content|firstUpper}</p>
+                <div class="col-sm-8 col-md-6 xs-button-center">
+                    <a class="button main-button button-no-image arrow-btn-animation" href="#" data-target="#modal-fullscreen" data-toggle="modal">Mám záujem</a>
+                </div>
+            </div>
+            <div n:class="$iterator->even ? col-sm-pull-6, col-md-offset-1, $iterator ? col-sm-5, col-md-4, $iterator->odd ? col-sm-push-1 ">
+                {control slider, articleId => $article->id, template => 'carousel', path => 'articles'}
+            </div>
+        </div>
+    </div>
+    <hr>
+</section>
+{/foreach}

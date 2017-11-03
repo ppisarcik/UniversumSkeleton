@@ -1,0 +1,10 @@
+{block content}
+
+<h1 class="list">Users</h1>
+{if !$administrator}
+    <a href="{plink Permissions:edit $userId}" data-toggle="modal" class="btn-new ajax">Edit my profile</a>
+{else}
+    <a href="{plink Permissions:edit}" data-toggle="modal" class="btn-new ajax">Add new user</a>
+    <a href="{plink Permissions:edit $userId}" data-toggle="modal" class="btn-new ajax">Edit my profile</a>
+{/if}
+{control userGrid}

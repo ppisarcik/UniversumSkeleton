@@ -1,0 +1,63 @@
+{block content}
+
+<div id="loader-wrapper">
+    <noscript>
+        <div class="alert alert-warning" role="alert">
+            <strong>Warning!</strong> Detected problem with javascript on your device, reload page or try on other device.
+        </div>
+    </noscript>
+    <div id="loader"></div>
+</div>
+<div class="container-fluid notice">
+    <div class="row">
+        <div class="col-xl-9 col-lg-8 col-md-8 col-sm-8">
+            <h1>{_ui.homepage.h1}</h1>
+            <p>Updated <b>{$time}</b> ago</p>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 language">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {_ui.homepage.Language}
+              </button>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" n:href="this, locale=>sk">Slovak</a>
+                <a class="dropdown-item" n:href="this, locale=>cs">Czech</a>
+                <a class="dropdown-item" n:href="this, locale=>en">English</a>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid charts">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Comparison of <strong>articles</strong> and <strong>categories</strong></h2>
+            <canvas id="postsChart" width="200" height="30"></canvas>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<script>
+    var posts_id = document.getElementById("postsChart").getContext('2d');
+    var postsChart = new Chart(posts_id, {
+        type: 'doughnut',
+        data: {
+            datasets: [{
+                data: [{$count->category - 1}, {$count->article}],
+                backgroundColor: [
+                    'hsl(225, 39%, 49%)',
+                    'hsl(231, 66%, 25%)'
+                ],
+                label: 'Dataset 1'
+            }],
+            labels: [
+                "Categories",
+                "Articles"
+            ]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>

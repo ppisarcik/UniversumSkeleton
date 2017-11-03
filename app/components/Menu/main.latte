@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default navbar-fixed-top navbar-shadow">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+              <span>MENU</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="/imgs/logo.png" alt="Logo">
+                <p class="animated-underline">Podlahyadvere<i class="decoration">.</i>sk</p>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse js-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                {foreach $menu as $item}
+                    {if $item->special}
+                         {foreach $mainCategories as $mainCategory}
+                            <li class="dropdown dropdown-large">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">{$mainCategory['title']|FirstUpper}<span class="decoration">+</span></a>
+                                <ul class="dropdown-menu dropdown-menu-large">
+                                    {control articleList, category_id => $mainCategory['id'], template => 'menu', sort => 'id DESC', slug => $mainCategory['slug']}
+                                    <div class="container">
+                                        {foreach $mainCategory['children'] as $item}
+                                            <li class="col-sm-3">
+                                                <ul>
+                                                    <a href="{plink Category:show $item['slug']}"> <li class="dropdown-header">{$item['title']|FirstUpper}</li></a>
+                                                    {control articleList, template => 'menu-doors', category_id => $item['id'], slug => $item['slug'], sort => 'id DESC'}
+                                                </ul>
+                                            </li>
+                                        {/foreach}
+                                    </div>
+                                </ul>
+                            </li>
+                        {/foreach}
+                    {else}
+                        <li><a href="{$item->link}">{$item->name}</a></li>
+                    {/if}
+                {/foreach}
+                <li class="navbar-cta">
+                    <a href="#" class="navbar-cta-container" data-toggle="modal" data-target="#modal-fullscreen">
+                    Požiadať o cenovú ponuku<span class="glyphicon glyphicon-menu-right decoration"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

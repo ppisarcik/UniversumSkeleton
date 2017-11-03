@@ -1,0 +1,8 @@
+parameters:
+    repositories:
+        Article: articleRepository
+        Category: categoryRepository
+        Contact: contactRepository
+        User: userRepository
+        Order: orderRepository
+

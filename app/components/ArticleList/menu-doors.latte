@@ -1,0 +1,3 @@
+{foreach $articles as $article}
+    <li><a href="{plink Category:show $slug}#{$article->title|webalize}">{$article->title|FirstUpper}</a></li>
+{/foreach}

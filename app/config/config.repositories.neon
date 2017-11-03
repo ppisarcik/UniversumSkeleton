@@ -1,0 +1,43 @@
+services:
+        # Articles
+        articleRepository: App\Repositories\ArticleRepository
+
+        # Categories
+        categoryRepository: App\Repositories\CategoryRepository
+
+        # Order Repository
+        orderRepository: App\Repositories\OrderRepository
+
+        # Category and Article
+        - App\Repositories\CategoryArticleRepository
+
+        #Template
+        - App\Repositories\TemplatesRepository
+
+        # RelationsRepository
+        - App\Repositories\RelationsRepository
+
+        # Contacts
+        contactRepository: App\Repositories\ContactsRepository
+
+        # Images
+        imageRepository: App\Repositories\ImageRepository
+
+        #User Repository
+        userRepository: App\Repositories\UserRepository
+
+        #Menu Repository
+        - App\Repositories\MenuRepository
+
+        #Category Image Repository
+        - App\Repositories\CategoryImageRepository
+
+        #Article Image Repository
+        - App\Repositories\ArticleImageRepository
+
+        # Settings Repository
+        - App\Repositories\SettingsRepository
+
+        #System settings
+        - App\Repositories\SystemSettingsRepository
+

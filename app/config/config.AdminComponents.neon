@@ -1,0 +1,44 @@
+services:
+        #Articles
+        - App\AdminModule\Components\ArticleForm\ArticleFormControl
+        - App\AdminModule\Components\ArticleForm\ArticleFormControlFactory
+
+        #Categories
+        - App\AdminModule\Components\CategoryForm\CategoryFormControl
+        - App\AdminModule\Components\CategoryForm\CategoryFormControlFactory
+
+        #SignInForm
+        - App\Components\SignInForm\SignInFormControl
+        - App\Components\SignInForm\SignInFormControlFactory
+
+        #Menu Form
+        - App\AdminModule\Components\Menu\MenuFormControl
+        - App\AdminModule\Components\Menu\MenuFormControlFactory
+
+        #Contact Form
+        - App\AdminModule\Components\Contact\ContactFormControl
+        - App\AdminModule\Components\Contact\ContactFormControlFactory
+
+        #User Form
+        - App\AdminModule\Components\User\UserFormControl
+        - App\AdminModule\Components\User\UserFormControlFactory
+
+        #Image Upload
+        - App\AdminModule\Components\ImageUpload\ImageUploadControl
+        - App\AdminModule\Components\ImageUpload\ImageUploadControlFactory
+
+        #Grid
+        - App\AdminModule\Components\Grid\GridControl
+        - App\AdminModule\Components\Grid\GridControlFactory
+
+        #User grid
+        - App\AdminModule\Components\UserGrid\UserGridControl
+        - App\AdminModule\Components\UserGrid\UserGridControlFactory
+
+        #Contact grid
+        - App\AdminModule\Components\ContactGrid\ContactGridControl
+        - App\AdminModule\Components\ContactGrid\ContactGridControlFactory
+
+        #Order Grid
+        - App\AdminModule\Components\OrderGrid\GridControl
+        - App\AdminModule\Components\OrderGrid\OrderGridControlFactory

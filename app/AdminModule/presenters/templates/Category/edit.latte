@@ -1,0 +1,15 @@
+{block title}
+    {if $category}
+        {$category->title}
+    {else}
+        Edit
+    {/if}
+{/block}
+
+{block content}
+{if $category}
+    {control categoryForm, 'id' => $category->id}
+    {control imageUpload}
+{else}
+    {control categoryForm}
+{/if}

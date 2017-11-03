@@ -1,0 +1,44 @@
+label.fileuploader-action input[type="checkbox"],
+label.fileuploader-action input[type="radio"]
+  display: none
+
+.column-actions div
+  float: left
+  margin-right: 10px
+
+  a, label
+    background-color: #687ddb
+
+    &:hover
+      background-color: #8b9adb
+
+    i.fa-pencil
+      color: white
+      position: absolute
+      font-size: 9px
+      top: 4px
+      left: 6px
+
+label.main-image
+  i.fa-star,
+  i.fa-star-o
+    color: white
+    position: absolute
+    font-size: 9px
+    top: 4px
+    left: 5px
+
+.cS-hidden
+  display: none
+
+.fileuploader-input-button
+  -webkit-border-radius: 2px
+  -moz-border-radius: 2px
+  border-radius: 2px
+
+.fileuploader-input-caption span
+  color: $tcolor
+
+.fileuploader-item .fileuploader-item-image canvas,
+.fileuploader-item .fileuploader-item-image img
+  object-fit: cover

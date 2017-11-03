@@ -1,0 +1,27 @@
+{*
+* $articles si das foreach a z toho len vypisujes klasicky
+* napr $article->title to je nazov, $article->content je toto vedla nazvu, $article->description bude button
+* obrazky coskoro budu :D
+*
+*}
+<div class="container" id="producers">
+    {foreach $articles as $article}
+        <div class="producer">
+                <div class="col-sm-12">
+                    <div class="media special-center">
+                        <div class="media-left media-left-producers media-align-middle">
+                            {control articleList template => 'Producers/ProducersImages', image_id => $article->image_id}
+                        </div>
+                        <div class="media-body media-body-producers media-align-middle">
+                            <p class="media-heading-producers media-body-producers"><span class="decoration">{$article->title}</span>{$article->content}</p>
+                        </div>
+                        <div class="media-right media-right-producers media-align-middle">
+                            <a href="#" class="media-right-producers main-button">{$article->description}<i class="glyphicon glyphicon-download-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {/foreach}
+</div>
+
+<a href="#collapseProducers" class="button main-button collapse-button collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseProducers">Zobraziť viac: <span class="left-to-show"></span><i class="glyphicon glyphicon-chevron-down"></i></a>

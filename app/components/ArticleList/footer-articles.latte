@@ -1,0 +1,5 @@
+<p class="footerlink">
+    {foreach $articles as $article}
+        <a href="{plink Category:show $slug}#{$article->title|webalize}">{$article->title}</a> <br>
+    {/foreach}
+</p>
