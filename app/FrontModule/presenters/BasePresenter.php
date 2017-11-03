@@ -6,7 +6,6 @@ use App\Components\CategoryList\CategoryListControlFactory;
 use App\Components\Slider\SliderControlFactory;
 use App\Components\ArticleList\ArticleListControlFactory;
 use App\Components\Menu\MenuControlFactory;
-use App\FrontModule\Components\Counseling\CounselingControlFactory;
 use App\FrontModule\Components\OrderForm\OrderFormControlFactory;
 use App\FrontModule\Components\Shops\ShopsControlFactory;
 use App\Repositories\SettingsRepository;
@@ -35,9 +34,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 
     /** @var ShopsControlFactory @inject */
     public $shopsControlFactory;
-
-    /** @var CounselingControlFactory @inject */
-    public $counselingControlFactory;
 
     /** @var SettingsRepository @inject */
     public $settingsRepository;

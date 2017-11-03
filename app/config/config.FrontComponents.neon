@@ -7,7 +7,3 @@ services:
         #Shops
         - App\FrontModule\Components\Shops\ShopsControl
         - App\FrontModule\Components\Shops\ShopsControlFactory
-
-        #Counseling
-        - App\FrontModule\Components\Counseling\CounselingControl
-        - App\FrontModule\Components\Counseling\CounselingControlFactory
